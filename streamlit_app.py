@@ -7,11 +7,7 @@ st.write('my project pridict does person have alzheimers disease or no.')
 import streamlit as st
 import pandas as pd
 
-st.title('😁😁😁  First App Abubakr')
-
-st.write('Hello world!')
-
-with st.expander('Initial data'):
+with st.expander('alzheimers_disease_patient_data.csv'):
   df = pd.read_csv('alzheimers_disease_patient_data.csv')
   del(df['DoctorInCharge'])
   st.write('**X**')
