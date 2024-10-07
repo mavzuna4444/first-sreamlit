@@ -1,5 +1,27 @@
 import streamlit as st
 
-st.title('🎈my first app ureeeeeeeeeee!')
+st.title('alzheimers_disease')
 
-st.write('Hello sweety!')
+st.write('my project pridict does person have alzheimers disease or no.')
+
+import streamlit as st
+import pandas as pd
+
+st.title('😁😁😁  First App Abubakr')
+
+st.write('Hello world!')
+
+with st.expander('Initial data'):
+  df = pd.read_csv('alzheimers_disease_patient_data.csv')
+  del(df['DoctorInCharge'])
+  st.write('**X**')
+  X_raw = df.drop('Diagnosis', axis=1)
+  X_raw
+
+  st.write('**y**')
+  y_raw = df.Diagnosis
+  y_raw
+
+with st.expander('Data visualization'):
+  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
+  st.scatter_chart(data=df, x='bill_depth_mm', y='sex', color='species')
