@@ -57,10 +57,9 @@ with st.sidebar:
   Personality_Changes	= st.selectbox("have you ever had a Personality Changes? (yes=1, no=0)", [0, 1])
   Difficulty_Completing_Tasks	= st.selectbox("have you ever had a Difficulty Completing Tasks? (yes=1, no=0)", [0, 1])
   Forgetfulness	= st.selectbox("do you have Forgetfulness? (yes=1, no=0)", [0, 1])
-
-
- #dataFrame
- input_data = pd.DataFrame({'Age': [Age], 	
+  
+  #dataFrame
+  input_data = pd.DataFrame({'Age': [Age], 	
          'Gender': [Gender], 
          'BMI': [BMI],	
          'Smoking': [Smoking],	
