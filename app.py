@@ -94,9 +94,9 @@ with st.sidebar:
   input_data = pd.concat([input_df, X_raw])
 
 with st.expander('Input features'):
-  st.write('**Input penguin**')
+  st.write('**Input features**')
   input_df
-  st.write('**Combined penguins data**')
+  st.write('**Combined features with data**')
   input_data
 
   
