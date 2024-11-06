@@ -93,7 +93,6 @@ with st.sidebar:
          'Personality Changes':	[Personality_Changes],
          'Difficulty Completing Tasks': [Difficulty_Completing_Tasks],
          'Forgetfulness':	[Forgetfulness]})
-  
   X = input_data[1:]
   input_row = input_data[:1]
   
@@ -119,4 +118,6 @@ with st.sidebar:
   df_prediction_proba.rename(columns={0: 'not alzheimer',
                                       1: 'alzheimer'})
 if st.button("Predict"):
-    st.subheader("prediction")
+    st.subheader("prediction:", df_prediction_proba)
+  
+  
