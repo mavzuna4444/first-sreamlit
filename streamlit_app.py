@@ -11,7 +11,7 @@ st.title("Мое Streamlit Приложение")
 
 st.write("Загрузите файл CSV для анализа")
 
-uploaded_file = st.file_uploader("Выберите файл", type="csv")
+uploaded_file = st.file_uploader("alzheimers_disease_patient_data", type="csv")
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.write("Ваши данные:")
