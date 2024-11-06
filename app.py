@@ -7,17 +7,12 @@ st.title('😁 Abubakr First APP')
 
 st.info('This is app builds a machine learning model!')
 
-# app.py
-import streamlit as st
-import pandas as pd
+with st.expander('Data'):
+  df = pd.read_csv('https://www.kaggle.com/datasets/sulimanabusamak123/alzheimers-public-dataset.csv')  
+  st.write('**X**')
+  X_raw = df.drop('species', axis=1)
+  X_raw
 
-st.title("Мое Streamlit Приложение")
-
-st.write("Загрузите файл CSV для анализа")
-
-uploaded_file = st.file_uploader("Выберите файл", type="csv")
-if uploaded_file:
-    df = pd.read_csv(uploaded_file)
-    st.write("Ваши данные:")
-    st.write(df)
-  
+  st.write('**y**')
+  y_raw = df.species
+  y_raw
