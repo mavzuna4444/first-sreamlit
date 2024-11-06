@@ -10,7 +10,20 @@ st.info('This is app builds a machine learning model!')
 with st.expander('Data'):
   df = pd.read_csv('alzheimers_disease_patient_data.csv')  
   df
-  
+  del(df['PatientID'])
+  del(df['DoctorInCharge'])
+  del(df['CholesterolLDL'])
+  del(df['CholesterolHDL'])
+  del(df['CholesterolTriglycerides'])
+  st.write('**X**')
+  X_raw = df.drop('Diagnosis', axis=1)
+  X_raw
+
+  st.write('**y**')
+  y_raw = df.Diagnosis
+  y_raw
+
+
 with st.sidebar:
   st.header('Input features')
   island = st.selectbox('Island', ('Biscoe', 'Dream', 'Torgersen'))
