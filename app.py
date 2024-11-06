@@ -120,7 +120,7 @@ df_prediction_proba.columns = ['not alzheimer', 'alzheimer']
 df_prediction_proba.rename(columns={0: 'not alzheimer',
                                       1: 'alzheimer'})
 
-st.header('Predicted Species')
+st.header('Prediction')
 st.dataframe(df_prediction_proba,
              column_config={
                'alzheimer': st.column_config.ProgressColumn(
