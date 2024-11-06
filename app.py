@@ -6,9 +6,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import BaggingClassifier
 
-st.title('😁 Abubakr First APP')
+st.title('Prediction of Alzheimer Disease')
 
-st.info('This is app builds a machine learning model!')
+st.info('This is app which predict Alzheimer Disease')
+st.header('prediction does not 100% true.')
 
 with st.expander('Data'):
   df = pd.read_csv('alzheimers_disease_patient_data.csv')  
@@ -90,7 +91,7 @@ with st.sidebar:
          'Personality Changes':	[Personality_Changes],
          'Difficulty Completing Tasks': [Difficulty_Completing_Tasks],
          'Forgetfulness':	[Forgetfulness]})
-  input_data = pd.concat([input_df, X_raw], axis=0)
+  input_data = pd.concat([input_df, X_raw])
 
 with st.expander('Input features'):
   st.write('**Input penguin**')
