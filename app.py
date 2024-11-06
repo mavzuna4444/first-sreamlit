@@ -38,7 +38,7 @@ with st.sidebar:
   Gender	=  st.selectbox("Gender	(Female=0, Male=1)", [0,1])
   BMI = st.number_input("BMI", min_value=10, max_value=40, value=25)
   Smoking = st.selectbox("do you smoke? (yes=1, no=0)", [0, 1])
-  Alcohol_Consumption = st.number_input("Alcohol Consumption (years)", min_value=0, max_value=70, value=25)
+  Alcohol_Consumption = st.slider("Alcohol Consumption (years)", 0.0, 70.0, 5.0)
   Physical_Activity = st.slider("Physical Activit (hours)", 0.0, 10.0, 3.0)
   Diet_Quality =  st.number_input(" Diet Quality", min_value=0, max_value=10, value=5)
   Sleep_Quality = st.slider("how many hours do you sleep?", 0.0, 12.0, 7.0)
