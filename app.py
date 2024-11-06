@@ -66,7 +66,7 @@ with st.sidebar:
   Forgetfulness	= st.selectbox("do you have Forgetfulness? (yes=1, no=0)", [0, 1])
   
   #dataFrame
-  input_data = pd.DataFrame({'Age': [Age], 	
+  input_df = pd.DataFrame({'Age': [Age], 	
          'Gender': [Gender], 
          'BMI': [BMI],	
          'Smoking': [Smoking],	
@@ -93,6 +93,7 @@ with st.sidebar:
          'Personality Changes':	[Personality_Changes],
          'Difficulty Completing Tasks': [Difficulty_Completing_Tasks],
          'Forgetfulness':	[Forgetfulness]})
+  input_data = pd.concat([input_df, X_raw], axis=0)
   
 X = input_data[1:]
 input_row = input_data[:1]
