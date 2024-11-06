@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.ensemble import BaggingClassifier
 
 st.title('😁 Abubakr First APP')
 
@@ -92,6 +93,30 @@ with st.sidebar:
          'Personality Changes':	[Personality_Changes],
          'Difficulty Completing Tasks': [Difficulty_Completing_Tasks],
          'Forgetfulness':	[Forgetfulness]})
+  
+  X = input_data[1:]
+  input_row = input_data[:1]
+  
+  # Encode y
+  target_mapper = {'not alzheimer': 0,
+                 'alzheimer': 1}
+  def target_encode(val):
+  return target_mapper[val]
+  
+  y = y_raw.apply(target_encode)
+  
+  # Model training and inference
+  ## Train the ML model
+  clf = BaggingClassifier()
+  clf.fit(X, y)
 
-  if st.button("Predict"):
+  ## Apply model to make predictions
+  prediction = clf.predict(input_row)
+  prediction_proba = clf.predict_proba(input_row)
+
+  df_prediction_proba = pd.DataFrame(prediction_proba)
+  df_prediction_proba.columns = ['not alzheimer', 'alzheimer']
+  df_prediction_proba.rename(columns={0: 'not alzheimer',
+                                      1: 'alzheimer'})
+if st.button("Predict"):
     st.subheader("prediction")
