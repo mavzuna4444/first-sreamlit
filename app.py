@@ -43,7 +43,7 @@ with st.expander('Visualization of data'):
     figure.delaxes(axes[i])
   plt.tight_layout()
   figure = plt.show()
-  st.pairplot(figure)
+  figure
 
 
 # Input features
