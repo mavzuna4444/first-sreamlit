@@ -87,5 +87,5 @@ with st.sidebar:
          'Difficulty Completing Tasks': [Difficulty_Completing_Tasks],
          'Forgetfulness':	[Forgetfulness]})
 
- if st.button("Предсказать"):
+  if st.button("Предсказать"):
     st.subheader(f"Предсказанное состояние ментального здоровья:")
