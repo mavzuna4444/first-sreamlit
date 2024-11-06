@@ -69,7 +69,7 @@ with st.sidebar:
          'Sleep Quality': [Sleep_Quality], 
          'Family_History_Alzheimers': [Family_History_Alzheimers],
          'Cardiovascular Disease': [Cardiovascular_Disease],
-         'Diabetes': [Diabets],
+         'Diabetes': [Diabetes],
          'Depression': [Depression],
          'Head Injury': [Head_Injury],
          'Hypertension': Hypertension,
