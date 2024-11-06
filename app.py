@@ -11,4 +11,5 @@ with st.expander('Data'):
   df = pd.read_csv('alzheimers_disease_patient_data.csv')  
   df
 
-df.info()
+info = df.info()
+info
