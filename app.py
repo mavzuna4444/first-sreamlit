@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+import matplotlib.pyplot as plt
 
 st.title('😁 Abubakr First APP')
 
@@ -42,6 +43,8 @@ with st.expander('Visualization of data'):
   plt.tight_layout()
   figure = plt.show()
   st.subplot(figure)
+
+
 # Input features
 with st.sidebar:
   st.header('Input features')
