@@ -99,13 +99,8 @@ X = input_data[1:]
 input_row = input_data[:1]
   
   # Encode y
-target_mapper = {'not alzheimer': 0,
-                 'alzheimer': 1}
-def target_encode(val):
-return target_mapper[val]
-  
-y = y_raw.apply(target_encode)
-  
+
+y = y_raw
   # Model training and inference
   ## Train the ML model
 clf = BaggingClassifier()
@@ -119,7 +114,8 @@ df_prediction_proba = pd.DataFrame(prediction_proba)
 df_prediction_proba.columns = ['not alzheimer', 'alzheimer']
 df_prediction_proba.rename(columns={0: 'not alzheimer',
                                       1: 'alzheimer'})
-st.subheader('Predicted Species')
+
+st.header('Predicted Species')
 st.dataframe(df_prediction_proba,
              column_config={
                'alzheimer': st.column_config.ProgressColumn(
