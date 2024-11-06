@@ -3,41 +3,16 @@ import streamlit as st
 st.title('alzheimers_disease')
 
 st.write('my project pridict does person have alzheimers disease or no.')
-
+# app.py
 import streamlit as st
 import pandas as pd
 
-with st.expander('alzheimers_disease_patient_data.csv'):
-  url = 'https://www.kaggle.com/datasets/sulimanabusamak123/alzheimers-public-dataset.csv'
-  df = pd.read_csv(url)
-  del(df['DoctorInCharge'])
-  st.write('**X**')
-  X_raw = df.drop('Diagnosis', axis=1)
-  X_raw
+st.title("Мое Streamlit Приложение")
 
-  st.write('**y**')
-  y_raw = df.Diagnosis
-  y_raw
+st.write("Загрузите файл CSV для анализа")
 
-with st.expander('Data visualization'):
-  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
-  st.scatter_chart(data=df, x='bill_depth_mm', y='sex', color='species')
-
-import streamlit as st
-import pandas as pd
-
-with st.expander('Initial data'):
-  df = pd.read_csv(url)
-  
-  st.write('**X**')
-  X_raw = df.drop('species', axis=1)
-  X_raw
-
-  st.write('**y**')
-  y_raw = df.species
-  y_raw
-
-with st.expander('Data visualization'):
-  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
-  st.scatter_chart(data=df, x='bill_depth_mm', y='sex', color='species')
-
+uploaded_file = st.file_uploader("Выберите файл", type="csv")
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+    st.write("Ваши данные:")
+    st.write(df)
