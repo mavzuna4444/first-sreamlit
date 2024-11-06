@@ -94,6 +94,13 @@ with st.sidebar:
          'Difficulty Completing Tasks': [Difficulty_Completing_Tasks],
          'Forgetfulness':	[Forgetfulness]})
   input_data = pd.concat([input_df, X_raw], axis=0)
+
+with st.expander('Input features'):
+  st.write('**Input penguin**')
+  input_df
+  st.write('**Combined penguins data**')
+  input_data
+
   
 X = input_data[1:]
 input_row = input_data[:1]
