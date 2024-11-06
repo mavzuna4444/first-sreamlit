@@ -118,6 +118,6 @@ with st.sidebar:
   df_prediction_proba.rename(columns={0: 'not alzheimer',
                                       1: 'alzheimer'})
 if st.button("Predict"):
-    st.subheader("prediction:", df_prediction_proba)
+    st.subheader("prediction:", prediction)
   
   
