@@ -8,8 +8,8 @@ import streamlit as st
 import pandas as pd
 
 with st.expander('alzheimers_disease_patient_data.csv'):
-  df = pd.read_csv('https://www.kaggle.com/datasets/sulimanabusamak123/alzheimers-public-dataset.csv')
-  
+  url = 'https://www.kaggle.com/datasets/sulimanabusamak123/alzheimers-public-dataset.csv'
+  df = pd.read_csv(url)
   del(df['DoctorInCharge'])
   st.write('**X**')
   X_raw = df.drop('Diagnosis', axis=1)
@@ -27,7 +27,7 @@ import streamlit as st
 import pandas as pd
 
 with st.expander('Initial data'):
-  df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
+  df = pd.read_csv(url)
   
   st.write('**X**')
   X_raw = df.drop('species', axis=1)
