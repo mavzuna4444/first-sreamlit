@@ -8,7 +8,7 @@ st.title('😁 Abubakr First APP')
 st.info('This is app builds a machine learning model!')
 
 with st.expander('Data'):
-  df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')  
+  df = pd.read_csv('https://www.kaggle.com/datasets/sulimanabusamak123/alzheimers-public-dataset')  
   st.write('**X**')
   X_raw = df.drop('species', axis=1)
   X_raw
