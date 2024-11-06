@@ -29,22 +29,6 @@ with st.expander('Data'):
   y_raw = df.Diagnosis
   y_raw
 
-with st.expander('Visualization of data'):
-  figure, axes = plt.subplots(nrows=7,ncols=5,figsize=(15,30))
-  axes = axes.flatten()
-  index=0
-  for column in df.columns:
-    sns.kdeplot(df, x=column, hue="Diagnosis", ax=axes[index],warn_singular=False,fill=True)
-    axes[index].set_title(column,fontsize=15)
-    axes[index].set(xlabel="",ylabel="")
-    axes[index].grid(True)
-    index+=1
-  for i in range(32,35):
-    figure.delaxes(axes[i])
-  plt.tight_layout()
-  figure = plt.show()
-  figure
-
 with st.expander('Data visualization'):
   st.scatter_chart(data=df, x='Age', y='Diagnosis', color='species')
   st.scatter_chart(data=df, x='Gender', y='Diagnosis', color='species')
