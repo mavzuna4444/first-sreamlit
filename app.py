@@ -31,30 +31,65 @@ with st.expander('Data'):
 with st.sidebar:
   st.header('Input features')
   Age = st.number_input("Age", min_value=18, max_value=100, value=25)
-  Gender	=  st.selectbox("Gender	", ["Male", "Female"])
+  Gender	=  st.selectbox("Gender	(Female=0, Male=1)", [0,1])
   BMI = st.number_input("BMI", min_value=10, max_value=40, value=25)
-  Smoking = st.selectbox("do you smoke?", [0, 1])
+  Smoking = st.selectbox("do you smoke? (yes=1, no=0)", [0, 1])
   Alcohol_Consumption = st.number_input("Alcohol Consumption (years)", min_value=0, max_value=70, value=25)
   Physical_Activity = st.slider("Physical Activit (hours)", 0.0, 10.0, 3.0)
   Diet_Quality =  st.number_input(" Diet Quality", min_value=0, max_value=10, value=5)
   Sleep_Quality = st.slider("how many hours do you sleep?", 0.0, 12.0, 7.0)
-  Family_History_Alzheimers = st.selectbox("Does anyone in your family suffer from this disease?", [0, 1])
-  Cardiovascular_Disease =  st.selectbox("do you have CardiovascularDisease?", [0, 1])
-  Diabetes = st.selectbox("do you have Diabetes?", [0, 1])
-  Depression = st.selectbox("have you ever had Depression?", [0, 1])
-  Head_Injury = st.selectbox("have you ever had Head Injury?", [0, 1])
-  Hypertension = st.selectbox("do you have Hypertension?", [0, 1])
+  Family_History_Alzheimers = st.selectbox("Does anyone in your family suffer from this disease? (yes=1, no=0)", [0, 1])
+  Cardiovascular_Disease =  st.selectbox("do you have CardiovascularDisease? (yes=1, no=0)", [0, 1])
+  Diabetes = st.selectbox("do you have Diabetes? (yes=1, no=0)", [0, 1])
+  Depression = st.selectbox("have you ever had Depression? (yes=1, no=0)", [0, 1])
+  Head_Injury = st.selectbox("have you ever had Head Injury? (yes=1, no=0)", [0, 1])
+  Hypertension = st.selectbox("do you have Hypertension? (yes=1, no=0)", [0, 1])
   SystolicBP	= st.number_input("SystolicBP", min_value=90, max_value=200, value=140)
   DiastolicBP = st.number_input("DiastolicBP", min_value=60, max_value=150, value=100)
   Cholesterol_Total = st.number_input("Cholesterol Tota", min_value=150, max_value=400, value=200)
   MMSE	= st.number_input("Mini-Mental State Examination", min_value=0, max_value=30, value=25)
   Functional_Assessment	= st.number_input("Functional Assessment", min_value=0, max_value=10, value=5)
-  Memory_Complaints	= st.selectbox("do you have Memory Complaints?", [0, 1])
-  Behavioral_Problems	= st.selectbox("do you have Behavioral Problems?", [0, 1])
+  Memory_Complaints	= st.selectbox("do you have Memory Complaints? (yes=1, no=0)", [0, 1])
+  Behavioral_Problems	= st.selectbox("do you have Behavioral Problems? (yes=1, no=0)", [0, 1])
   ADL	= st.number_input("Activity of Daily Living", min_value=0, max_value=10, value=5)
-  Confusion	= st.selectbox("have you ever mixed things up0?", [0, 1])
-  Disorientation	= st.selectbox("have you ever experienced Disorientation?", [0, 1])
-  Personality_Changes	= st.selectbox("have you ever had a Personality Changes?", [0, 1])
-  Difficulty_Completing_Tasks	= st.selectbox("have you ever had a Difficulty Completing Tasks?", [0, 1])
-  Forgetfulness	= st.selectbox("do you have Forgetfulness?", [0, 1])
-  
+  Confusion	= st.selectbox("have you ever mixed things up0? (yes=1, no=0)", [0, 1])
+  Disorientation	= st.selectbox("have you ever experienced Disorientation? (yes=1, no=0)", [0, 1])
+  Personality_Changes	= st.selectbox("have you ever had a Personality Changes? (yes=1, no=0)", [0, 1])
+  Difficulty_Completing_Tasks	= st.selectbox("have you ever had a Difficulty Completing Tasks? (yes=1, no=0)", [0, 1])
+  Forgetfulness	= st.selectbox("do you have Forgetfulness? (yes=1, no=0)", [0, 1])
+
+
+ #dataFrame
+ data = {'Age' = Age,	
+         'Gender'	= Gender,
+         'BMI' = BMI ,	
+         'Smoking' = Smoking,	
+         'Alcohol Consumption' = Alcohol_Consumption, 	
+         'Physical Activity' = Physical_Activity,	
+         'Diet Quality' = Diet_Quality,
+         'Sleep Quality'	= Sleep_Quality, 
+         'Family_History_Alzheimers' = 	Family_History_Alzheimers
+         'Cardiovascular Disease' = CardiovascularDisease,
+         'Diabetes' = Diabets,
+         'Depression' = Depression,
+         'Head Injury'	= Head_Injury,
+         'Hypertension' = Hypertension,
+         'SystolicBP' = SystolicBP,
+         'DiastolicBP' = 	DiastolicBP,
+         'Cholesterol Total' = Cholesterol_Total,
+         'MMSE'= MMSE,
+         'Functional Assessment' = Functional_Assessment,
+         'Memory Complaints' = Memory_Complaints,
+         'Behavioral Problems'	= Behavioral_Problems,
+         'ADL' = ADL,
+         'Confusion' = Confusion,
+         'Disorientation' = Disorientation,
+         'Personality Changes' =	Personality_Changes,
+         'Difficulty Completing Tasks' = Difficulty_Completing_Tasks,
+         'Forgetfulness' =	Forgetfulness}
+
+  input_df = pd.DataFrame(data, index=[0])
+  input_penguins = pd.concat([input_df, X_raw], axis=0)
+
+  input_df
+
