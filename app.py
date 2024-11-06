@@ -32,38 +32,29 @@ with st.sidebar:
   st.header('Input features')
   Age = st.number_input("Age", min_value=18, max_value=100, value=25)
   Gender	=  st.selectbox("Gender	", ["Male", "Female"])
-  BMI = 
+  BMI = st.number_input("BMI", min_value=10, max_value=40, value=25)
   Smoking = st.selectbox("do you smoke?", [0, 1])
-  Alcohol_Consumption = 
-  Physical_Activity = 
-  DietQuality = 
-  Sleep_Quality = st.slider("Часы сна", 0.0, 12.0, 7.0)
+  Alcohol_Consumption = st.number_input("Alcohol Consumption (years)", min_value=0, max_value=70, value=25)
+  Physical_Activity = st.slider("Physical Activit (hours)", 0.0, 10.0, 3.0)
+  Diet_Quality =  st.number_input(" Diet Quality", min_value=0, max_value=10, value=25)
+  Sleep_Quality = st.slider("how many hours do you sleep?", 0.0, 12.0, 7.0)
   Family_History_Alzheimers = st.selectbox("Does anyone in your family suffer from this disease?", [0, 1])
   Cardiovascular_Disease =  st.selectbox("do you have CardiovascularDisease?", [0, 1])
   Diabetes = st.selectbox("do you have Diabetes?", [0, 1])
-  Depression = st.selectbox("do you have Depression?", [0, 1])
-  Head_Injury = st.selectbox("do you have Head Injury?", [0, 1])
+  Depression = st.selectbox("have you ever had Depression?", [0, 1])
+  Head_Injury = st.selectbox("have you ever had Head Injury?", [0, 1])
   Hypertension = st.selectbox("do you have Hypertension?", [0, 1])
-  SystolicBP	=
-  DiastolicBP = 
-  CholesterolTotal = 
-  MMSE	=
-  FunctionalAssessment	=
-  MemoryComplaints	=
-  BehavioralProblems	=
-  ADL	=
-  Confusion	=
-  Disorientation	=
-  PersonalityChanges	=
-  DifficultyCompletingTasks	=
-  Forgetfulness	=
+  SystolicBP	= st.number_input("SystolicBP", min_value=90, max_value=200, value=25)
+  DiastolicBP = st.number_input("DiastolicBP", min_value=60, max_value=150, value=25)
+  Cholesterol_Total = st.number_input("Cholesterol Tota", min_value=150, max_value=400, value=25)
+  MMSE	= st.number_input("Mini-Mental State Examination", min_value=0, max_value=30, value=25)
+  Functional_Assessment	= st.number_input("Functional Assessment", min_value=0, max_value=10, value=25)
+  Memory_Complaints	= st.selectbox("do you have Memory Complaints?", [0, 1])
+  Behavioral_Problems	= st.selectbox("do you have Behavioral Problems?", [0, 1])
+  ADL	= st.number_input("Activity of Daily Living", min_value=0, max_value=10, value=25)
+  Confusion	= st.selectbox("have you ever mixed things up0?", [0, 1])
+  Disorientation	= st.selectbox("have you ever experienced Disorientation?", [0, 1])
+  Personality_Changes	= st.selectbox("have you ever had a Personality Changes?", [0, 1])
+  Difficulty_Completing_Tasks	= st.selectbox("have you ever had a Difficulty Completing Tasks?", [0, 1])
+  Forgetfulness	= st.selectbox("do you have Forgetfulness?", [0, 1])
   
-  technology_usage = st.slider("Часы использования технологий", 0.0, 15.0, 6.0)
-  social_media_usage = st.slider("Часы использования социальных сетей", 0.0, 15.0, 3.0)
-  gaming_hours = st.slider("Часы на игры", 0.0, 10.0, 1.0)
-  screen_time = st.slider("Общее экранное время (часов)", 0.0, 20.0, 8.0)
-  physical_activity_hours = st.slider("Часы физической активности", 0.0, 10.0, 3.0)
-  support_systems_access = st.selectbox("Доступ к системам поддержки", ["Yes", "No"])
-  work_environment_impact = st.selectbox("Влияние рабочей среды", ["Positive", "Negative"])
-  online_support_usage = st.selectbox("Использование онлайн-поддержки", ["Yes", "No"])
-  stress_level = st.selectbox("Уровень стресса", ["Low", "Medium", "High"])
