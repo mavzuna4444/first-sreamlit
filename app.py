@@ -93,32 +93,33 @@ with st.sidebar:
          'Personality Changes':	[Personality_Changes],
          'Difficulty Completing Tasks': [Difficulty_Completing_Tasks],
          'Forgetfulness':	[Forgetfulness]})
-  X = input_data[1:]
-  input_row = input_data[:1]
+  
+X = input_data[1:]
+input_row = input_data[:1]
   
   # Encode y
-  target_mapper = {'not alzheimer': 0,
+target_mapper = {'not alzheimer': 0,
                  'alzheimer': 1}
-  def target_encode(val):
-  return target_mapper[val]
+def target_encode(val):
+return target_mapper[val]
   
-  y = y_raw.apply(target_encode)
+y = y_raw.apply(target_encode)
   
   # Model training and inference
   ## Train the ML model
-  clf = BaggingClassifier()
-  clf.fit(X, y)
+clf = BaggingClassifier()
+clf.fit(X, y)
 
   ## Apply model to make predictions
-  prediction = clf.predict(input_row)
-  prediction_proba = clf.predict_proba(input_row)
+prediction = clf.predict(input_row)
+prediction_proba = clf.predict_proba(input_row)
 
-  df_prediction_proba = pd.DataFrame(prediction_proba)
-  df_prediction_proba.columns = ['not alzheimer', 'alzheimer']
-  df_prediction_proba.rename(columns={0: 'not alzheimer',
+df_prediction_proba = pd.DataFrame(prediction_proba)
+df_prediction_proba.columns = ['not alzheimer', 'alzheimer']
+df_prediction_proba.rename(columns={0: 'not alzheimer',
                                       1: 'alzheimer'})
-  st.subheader('Predicted Species')
-  st.dataframe(df_prediction_proba,
+st.subheader('Predicted Species')
+st.dataframe(df_prediction_proba,
              column_config={
                'alzheimer': st.column_config.ProgressColumn(
                  'alzheimer',
@@ -135,5 +136,6 @@ with st.sidebar:
                  max_value=1
                ),
              }, hide_index=True)
+  
 penguins_species = np.array(['not alzheimer', 'alzheimer'])
 st.success(str(penguins_species[prediction][0]))
