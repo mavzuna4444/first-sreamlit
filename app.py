@@ -117,7 +117,23 @@ with st.sidebar:
   df_prediction_proba.columns = ['not alzheimer', 'alzheimer']
   df_prediction_proba.rename(columns={0: 'not alzheimer',
                                       1: 'alzheimer'})
-if st.button("Predict"):
-    st.subheader("prediction:", prediction)
-  
-  
+  st.subheader('Predicted Species')
+  st.dataframe(df_prediction_proba,
+             column_config={
+               'alzheimer': st.column_config.ProgressColumn(
+                 'alzheimer',
+                 format='%f',
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               ),
+               'not alzheimer': st.column_config.ProgressColumn(
+                 'not alzheimer',
+                 format='%f',
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               ),
+             }, hide_index=True)
+penguins_species = np.array(['not alzheimer', 'alzheimer'])
+st.success(str(penguins_species[prediction][0]))
