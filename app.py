@@ -30,9 +30,6 @@ with st.expander('Data'):
   y_raw = df.Diagnosis
   y_raw
 
-with st.expander('Data visualization'):
-  st.scatter_chart(data=df, x='Age', y='Diagnosis', color='species')
-  st.scatter_chart(data=df, x='Gender', y='Diagnosis', color='species')
 
 # Input features
 with st.sidebar:
