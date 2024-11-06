@@ -60,7 +60,7 @@ with st.sidebar:
 
 
  #dataFrame
- data = {'Age' = Age,	
+ data = {'Age' = [Age],	
          'Gender'	= Gender,
          'BMI' = BMI ,	
          'Smoking' = Smoking,	
@@ -68,7 +68,7 @@ with st.sidebar:
          'Physical Activity' = Physical_Activity,	
          'Diet Quality' = Diet_Quality,
          'Sleep Quality'	= Sleep_Quality, 
-         'Family_History_Alzheimers' = 	Family_History_Alzheimers
+         'Family_History_Alzheimers' = 	Family_History_Alzheimers,
          'Cardiovascular Disease' = CardiovascularDisease,
          'Diabetes' = Diabets,
          'Depression' = Depression,
