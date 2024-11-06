@@ -46,8 +46,8 @@ with st.expander('Visualization of data'):
   figure
 
 with st.expander('Data visualization'):
-  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
-  st.scatter_chart(data=df, x='bill_depth_mm', y='sex', color='species')
+  st.scatter_chart(data=df, x='Age', y='Diagnosis', color='species')
+  st.scatter_chart(data=df, x='Gender', y='Diagnosis', color='species')
 
 # Input features
 with st.sidebar:
