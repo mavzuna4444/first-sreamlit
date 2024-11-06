@@ -68,7 +68,7 @@ with st.sidebar:
          'Diet Quality': [Diet_Quality],
          'Sleep Quality': [Sleep_Quality], 
          'Family_History_Alzheimers': [Family_History_Alzheimers],
-         'Cardiovascular Disease': [CardiovascularDisease],
+         'Cardiovascular Disease': [Cardiovascular_Disease],
          'Diabetes': [Diabets],
          'Depression': [Depression],
          'Head Injury': [Head_Injury],
