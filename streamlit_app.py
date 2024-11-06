@@ -14,5 +14,5 @@ if uploaded_file:
     st.write(df)
 
 st.write(df.info())
-st.write(df.hist(figsize=(20,20), bins=50)
-plt.show())
+data.hist(figsize=(20,20), bins=50)
+st.write(plt.show())
