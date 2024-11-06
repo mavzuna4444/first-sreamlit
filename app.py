@@ -8,8 +8,13 @@ st.title('😁 Abubakr First APP')
 st.info('This is app builds a machine learning model!')
 
 with st.expander('Data'):
-  url = "https://www.kaggle.com/datasets/sulimanabusamak123/alzheimers-public-dataset/code"
-  df = pd.read_csv(url)  
+  st.write("Загрузите файл CSV для анализа")
+
+uploaded_file = st.file_uploader("Выберите файл", type="csv")
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+    st.write("Ваши данные:")
+    st.write(df)
   st.write('**X**')
   X_raw = df.drop('species', axis=1)
   X_raw
