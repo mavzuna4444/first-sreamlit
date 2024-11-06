@@ -12,3 +12,7 @@ if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.write("Ваши данные:")
     st.write(df)
+
+st.write(df.info())
+st.write(data.hist(figsize=(20,20), bins=50)
+plt.show())
