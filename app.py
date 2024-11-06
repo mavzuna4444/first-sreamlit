@@ -10,6 +10,7 @@ st.info('This is app builds a machine learning model!')
 with st.expander('Data'):
   df = pd.read_csv('alzheimers_disease_patient_data.csv')  
   df
+  
 with st.sidebar:
   st.header('Input features')
   island = st.selectbox('Island', ('Biscoe', 'Dream', 'Torgersen'))
